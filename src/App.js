@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Form from './Form';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <CssBaseline />
       <Navbar />
+      <Form />
     </>
   );
 }
