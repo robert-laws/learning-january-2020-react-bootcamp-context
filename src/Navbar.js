@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from './context/ThemeContext';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -11,12 +12,13 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavBarStyles';
 
 const Navbar = props => {
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   const { classes } = props;
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color={ isDarkMode ? 'default' : 'primary'}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit">
             <span role='img' aria-label='flag'>&#128681;</span>
@@ -24,7 +26,7 @@ const Navbar = props => {
           <Typography className={classes.title} variant='h6' color='inherit'>
             App Title
           </Typography>
-          <Switch />
+          <Switch onChange={toggleTheme} />
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
