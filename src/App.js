@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import PageContent from './PageContent';
 import Navbar from './Navbar';
 import Form from './Form';
@@ -11,11 +12,13 @@ import './App.scss';
 function App() {
   return (
     <ThemeProvider>
-      <PageContent>
-        <CssBaseline />
-        <Navbar />
-        <Form />
-      </PageContent>
+      <LanguageProvider>
+        <PageContent>
+          <CssBaseline />
+          <Navbar />
+          <Form />
+        </PageContent>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
