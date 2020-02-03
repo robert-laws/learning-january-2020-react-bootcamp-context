@@ -3,7 +3,7 @@ import React, { useState, createContext } from 'react';
 export const LanguageContext = createContext();
 
 export const LanguageProvider = props => {
-  const [language, setLanguage] = useState('french');
+  const [language, setLanguage] = useState('english');
 
   const changeLanguage = event => {
     setLanguage(event.target.value)
@@ -15,11 +15,3 @@ export const LanguageProvider = props => {
     </LanguageContext.Provider>
   )
 }
-
-export const withLanguageContext = Component => props => (
-  <LanguageContext.Consumer>
-    {value => (
-      <Component languageContext={value} {...props} />
-    )}
-  </LanguageContext.Consumer>
-)
