@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider>
       <LanguageProvider>
